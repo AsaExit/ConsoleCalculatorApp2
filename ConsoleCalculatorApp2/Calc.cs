@@ -9,9 +9,9 @@ namespace ConsoleCalculatorApp2
      // States
 
         // Fields
-        int inputNumberOne;
-        int inputNumberTwo;
-        int result;
+        double inputNumberOne;
+        double inputNumberTwo;
+        double result;
 
 
         // Property
@@ -22,28 +22,39 @@ namespace ConsoleCalculatorApp2
 
         // Methods
 
-        // Addition method takes the int property and calculate and return the result 
-        public int Addition(int inputNumberOne, int inputNumberTwo)
+        // Addition method takes the double property and calculate and return the result 
+        public double Addition(double inputNumberOne, double inputNumberTwo)
         {
-            int result = inputNumberOne + inputNumberTwo;
+            double result = inputNumberOne + inputNumberTwo;
             return result;
         }
-        // Substraction method takes the int property and calculate and return the result  
-         public int Subtraction(int inputNumberOne, int inputNumberTwo)
+
+        public double Addition(double[] arr)
         {
-            int result = inputNumberOne - inputNumberTwo;
+           double result = 0;
+            for(int i=0;i < arr.Length; i++)
+            {
+                result += arr[i];
+            }
             return result;
         }
-        // Multiplication  method takes the int property and calculate and return the result 
-         public int Multiplication(int inputNumberOne, int inputNumberTwo)
+        // Substraction method takes the double property and calculate and return the result  
+        public double Subtraction(double inputNumberOne, double inputNumberTwo)
         {
-            int result = inputNumberOne * inputNumberTwo;
+            double result = inputNumberOne - inputNumberTwo;
+            return result;
+            
+        }
+        // Multiplication  method takes the double property and calculate and return the result 
+         public double Multiplication(double inputNumberOne, double inputNumberTwo)
+        {
+            double result = inputNumberOne * inputNumberTwo;
             return result;
         }
-        // Division method takes the int property and calculate and return the result 
-        public int Division(int inputNumberOne, int inputNumberTwo)
+        // Division method takes the double property and calculate and return the result 
+        public double Division(double inputNumberOne, double inputNumberTwo)
         {
-            int result = inputNumberOne / inputNumberTwo;
+            double result = inputNumberOne / inputNumberTwo;
             if (inputNumberTwo == 0)
                 Console.WriteLine("Can not divied with 0");
             else if (inputNumberTwo != 0)
