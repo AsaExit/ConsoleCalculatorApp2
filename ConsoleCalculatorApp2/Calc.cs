@@ -6,17 +6,7 @@ namespace ConsoleCalculatorApp2
 {
     class Calc
     {
-     // States
-
-        // Fields
-
-
-
-        // Property
-
-        // Behavior
-
-        // Constructor
+     // States // Fields // Property // Behavior // Constructor
 
         // Methods
 
@@ -61,16 +51,17 @@ namespace ConsoleCalculatorApp2
             return result;
         }
         // Division method takes the double property and calculate and return the result 
-        public double Division(double inputNumberOne, double inputNumberTwo)
+        public static double Division(double inputNumberOne, double inputNumberTwo)
         {
             double result = 0;
-            
             if (inputNumberTwo == 0)
+                throw new DivideByZeroException("Divisor cannot be 0!");
+            else
             { result = inputNumberOne / inputNumberTwo; }
-            if (inputNumberTwo != 0)
-            { throw new DivideByZeroException("Can not be 0!"); }
+
             return result;
+
         }
-    
+
     }// End of Calc class
 }// End of Class namespace
