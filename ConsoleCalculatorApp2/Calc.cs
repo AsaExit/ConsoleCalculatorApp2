@@ -4,20 +4,20 @@ using System.Text;
 
 namespace ConsoleCalculatorApp2
 {
-    class Calc
+    public class Calc
     {
      // States // Fields // Property // Behavior // Constructor
 
         // Methods
 
         // Addition method takes the double property and calculate and return the result 
-        public double Addition(double inputNumberOne, double inputNumberTwo)
+        public static double Addition(double inputNumberOne, double inputNumberTwo)
         {
             double result = inputNumberOne + inputNumberTwo;
             return result;
         }
 
-        public double Addition(double[] arr)
+        public static double Addition(double[] arr)
         {//{ 1.1, -3.3, 5, 7, 8.8 }
             double result = 0;
             for(int i=0;i < arr.Length; i++)
@@ -27,14 +27,14 @@ namespace ConsoleCalculatorApp2
             return result;
         }
         // Substraction method takes the double property and calculate and return the result  
-        public double Subtraction(double inputNumberOne, double inputNumberTwo)
+        public static double Subtraction(double inputNumberOne, double inputNumberTwo)
         {
             double result = inputNumberOne - inputNumberTwo;
             return result;
             
         }
 
-        public double Subtraction(double[] arr)
+        public static double Subtraction(double[] arr)
         {//{ 1.1, -3.3, 5, 7, 8.8 }
             double result = 0;
             for (int i = 1; i < arr.Length; i++)
