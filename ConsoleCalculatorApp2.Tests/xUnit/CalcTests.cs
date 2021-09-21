@@ -38,14 +38,35 @@ namespace ConsoleCalculatorApp2.Tests
         public void AdditionTestGoodNegativNumbers()
         {
             //Arrange
-            double inputNumberOne = -1.3;
-            double inputNumberTwo = 3.4;
+            double inputNumberOne = -5.1;
+            double inputNumberTwo = -3.4;
 
             //Act
             double result = Calc.Addition(inputNumberOne, inputNumberTwo);
 
             //Assert
-            Assert.Equal(3, result);
+            Assert.Equal(-8.5, result);
         }
+
+        [Theory]
+        [InlineData(new double[4] { 1.1, -2.2, 5, 9 })]
+        [InlineData(new double[5] { 1.1, -3.3, 5, 7, 8.8 })]
+        public void Addition(double[] arr)
+        {
+            //Arrange
+            double result;
+            double resultTest = 0;
+
+            //Act
+            for (int i = 0; i < arr.Length; i++)
+            {
+                resultTest += arr[i];
+            }
+            result = Calc.Addition(arr);
+
+            //Assert
+            Assert.Equal(resultTest, result);
+        }
+
     }
 }
