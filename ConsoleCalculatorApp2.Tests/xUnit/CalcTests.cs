@@ -10,42 +10,55 @@ namespace ConsoleCalculatorApp2.Tests
         [Fact]
         public void AdditionTestGood()
         {
-            //Arrange
+            //ARRANGE
             double inputNumberOne = 99;
             double inputNumberTwo = 0;
 
-            //Act
+            //ACT
             double result = Calc.Addition(inputNumberOne, inputNumberTwo);
 
-            //Assert
+            //ASSERT
             Assert.Equal(99, result);
         }
 
         [Fact]
         public void AdditionTestGoodDecimal()
         {
-            //Arrange
+            //ARRANGE
             double inputNumberOne = 1.3;
             double inputNumberTwo = 3.4;
 
-            //Act
+            //ACT
             double result = Calc.Addition(inputNumberOne, inputNumberTwo);
 
-            //Assert
+            //ASSERT
             Assert.Equal(4.7, result);
         }
 
         [Fact]
+        public void AdditionTesBeginDecimal()
+        {
+            //ARRANGE
+            double inputNumberOne = -1.3;
+            double inputNumberTwo = 3.4;
+
+            //ACT
+            double result = Calc.Addition(inputNumberOne, inputNumberTwo);
+
+            //ASSERT
+            Assert.Equal(2.1, result, 2);
+        }
+        [Fact]
         public void AdditionTestGoodNegativNumbers()
         {
-            //Arrange
+            //ARRANGE
             double inputNumberOne = -5.1;
             double inputNumberTwo = -3.4;
 
-            //Act
+            //ACT
             double result = Calc.Addition(inputNumberOne, inputNumberTwo);
 
-            //Assert
+            //ASSERT
             Assert.Equal(-8.5, result);
         }
 
@@ -54,18 +67,18 @@ namespace ConsoleCalculatorApp2.Tests
         [InlineData(new double[5] { 1.1, -3.3, 5, 7, 8.8 })]
         public void AdditionArr(double[] arr)
         {
-            //Arrange
+            //ARRANGE
             double result;
             double resultTest = 0;
 
-            //Act
+            //ACT
             for (int i = 0; i < arr.Length; i++)
             {
                 resultTest += arr[i];
             }
             result = Calc.Addition(arr);
 
-            //Assert
+            //ASSERT
             Assert.Equal(resultTest, result);
         }
 
@@ -73,30 +86,35 @@ namespace ConsoleCalculatorApp2.Tests
         [Fact]
         public void SubtractionTestOne()
         {
+            //ARRANGE
             double inputNumberOne = 99;
             double inputNumberTwo = 45.5;
 
+            //ACT
             double result = Calc.Subtraction(inputNumberOne, inputNumberTwo);
+
+            //ASSERT
             Assert.Equal(53.5, result);
         }
+
         [Theory]
         [InlineData(new double[4] { 1.1, -2.2, 5, 9 })]
         [InlineData(new double[5] { 1.1, -3.3, 5, 7, 8.8 })]
 
         public void SubtractionTestArr(double[] arr)
         {
-            //Arrange
+            //ARRANGE
             double result;
             double resultTest = arr[0];
 
-            //Act
+            //ACT
             for (int i = 1; i < arr.Length; i++)
             {
                 resultTest -= arr[i];
             }
             result = Calc.Subtraction(arr);
 
-            //Assert
+            //ASSERT
             Assert.Equal(resultTest, result);
         }
         [Fact]
@@ -106,8 +124,6 @@ namespace ConsoleCalculatorApp2.Tests
             double expected = -60.6;
             double[] arr = new double[4]
             {-2.2, 5.5, -8.2, 61.1};
-
-
 
             //ACT
             double actual = Calc.Subtraction(arr);
@@ -121,12 +137,16 @@ namespace ConsoleCalculatorApp2.Tests
 
         [Fact]
         public void MultiplicationTest()
-        {
+        {  
+            //ARRANGE
             double inputNumberOne = 8;
             double inputNumberTwo = 5.5;
 
+            //ACT
+
             double result = Calc.Multiplication(inputNumberOne, inputNumberTwo);
 
+            //ASSERT
             Assert.Equal(44, result);
         }
 
@@ -135,10 +155,12 @@ namespace ConsoleCalculatorApp2.Tests
         [Fact]
         public void DivisionTest()
         {
+            //ARRANGE
             double inputNumberOne = 99;
             double inputNumberTwo = 1.1;
-
+            //ACT
             double result = Calc.Division(inputNumberOne, inputNumberTwo);
+            //ASSERT
             Assert.Equal(90, result, 2);
         }
         [Fact]
@@ -146,26 +168,25 @@ namespace ConsoleCalculatorApp2.Tests
         {
             double inputNumberOne = 1;
             double inputNumberTwo = 3;
-
+            //ACT
             double result = Calc.Division(inputNumberOne, inputNumberTwo);
-
+            //ASSERT
             Assert.Equal(0.33, result, 2);
         }
 
         [Fact]
         public void DivisionIsZeroTest()
         {
-            //Arange
+            //ARRANGE
 
             double inputNumberOne = 99;
             double inputNumberTwo = 0;
 
-
-            //Act
+            //ACT
             DivideByZeroException result = Assert.Throws<DivideByZeroException>(
                  () => Calc.Division(inputNumberOne, inputNumberTwo));
 
-            //Assert
+            //ASSERT
             Assert.Equal("Divisor cannot be 0!", result.Message);
         }
     }
