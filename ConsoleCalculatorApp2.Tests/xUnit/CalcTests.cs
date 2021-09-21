@@ -119,6 +119,19 @@ namespace ConsoleCalculatorApp2.Tests
             //ASSERT
             Assert.Equal(expected, actual);
         }
+        [Fact]
+        public void SubtractionZeroStart()
+        {
+            //ARRANGE
+            double expected = -11;
+            double[] arr = new double[4]
+            { 0, 4, -3, 10};
+            //ACT
+            double actual = Calc.Subtraction(arr);
+
+            //ASSERT
+            Assert.Equal(expected, actual);
+        }
 
 
         // ************** Multiplication Tests**********************/
