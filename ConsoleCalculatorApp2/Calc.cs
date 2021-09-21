@@ -67,19 +67,12 @@ namespace ConsoleCalculatorApp2
         // Division method takes the double property and calculate and return the result 
         public static double Division(double inputNumberOne, double inputNumberTwo)
         {
-            double result = 0;
-
             if (inputNumberTwo == 0)
             {
                 throw new DivideByZeroException("Divisor cannot be 0!");
             }
 
-            if (inputNumberTwo != 0)
-            {
-                result = inputNumberOne / inputNumberTwo;
-            }
-
-            return result;
+            return inputNumberOne / inputNumberTwo;
 
         }
 
