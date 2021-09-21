@@ -150,6 +150,35 @@ namespace ConsoleCalculatorApp2.Tests
             Assert.Equal(44, result);
         }
 
+        [Fact]
+        public void MultiplicationTestDecimal()
+        {
+            //ARRANGE
+            double inputNumberOne = 8.1;
+            double inputNumberTwo = 10;
+
+            //ACT
+
+            double result = Calc.Multiplication(inputNumberOne, inputNumberTwo);
+
+            //ASSERT
+            Assert.Equal(81, result);
+        }
+
+        [Fact]
+        public void MultiplicationTestDecimalNegativ()
+        {
+            //ARRANGE
+            double inputNumberOne = -8.1;
+            double inputNumberTwo = 10;
+
+            //ACT
+
+            double result = Calc.Multiplication(inputNumberOne, inputNumberTwo);
+
+            //ASSERT
+            Assert.Equal(-81, result);
+        }
         // ************** Division Test **********************/
 
         [Fact]
