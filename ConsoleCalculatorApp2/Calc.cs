@@ -59,7 +59,7 @@ namespace ConsoleCalculatorApp2
 
         }
         // Multiplication  method takes the double property and calculate and return the result 
-        public double Multiplication(double inputNumberOne, double inputNumberTwo)
+        public static double Multiplication(double inputNumberOne, double inputNumberTwo)
         {
             double result = inputNumberOne * inputNumberTwo;
             return result;

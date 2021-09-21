@@ -79,5 +79,26 @@ namespace ConsoleCalculatorApp2.Tests
             Assert.Equal(53.5, result);
         }
 
+        [Fact]
+        public void MultiplicationTest()
+        {
+            double inputNumberOne = 8;
+            double inputNumberTwo = 5.5;
+
+            double result = Calc.Multiplication(inputNumberOne, inputNumberTwo);
+
+            Assert.Equal(44, result);
+        }
+
+        [Fact]
+        public void DivisionTest()
+        {
+            double inputNumberOne = 99;
+            double inputNumberTwo = 1.1;
+
+            double result = Calc.Division(inputNumberOne, inputNumberTwo);
+            Assert.Equal(inputNumberOne / inputNumberTwo, result);
+        }
+
     }
 }
