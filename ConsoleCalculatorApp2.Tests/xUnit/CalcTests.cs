@@ -68,5 +68,16 @@ namespace ConsoleCalculatorApp2.Tests
             Assert.Equal(resultTest, result);
         }
 
+        //SUB
+        [Fact]
+        public void SubtractionTestOne()
+        {
+            double inputNumberOne = 99;
+            double inputNumberTwo = 45.5;
+
+            double result = Calc.Subtraction(inputNumberOne, inputNumberTwo);
+            Assert.Equal(53.5, result);
+        }
+
     }
 }
