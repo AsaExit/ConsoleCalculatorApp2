@@ -36,12 +36,26 @@ namespace ConsoleCalculatorApp2
 
         public static double Subtraction(double[] arr)
         {//{ 1.1, -3.3, 5, 7, 8.8 }
-            double result = 0;
+            try 
+            { double darthResult = arr[0]; 
+            }
+            catch (IndexOutOfRangeException)
+            
+            { return 0; 
+            }
+            double result = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                result -=  arr[i];
+            }
+            return result;
+
+            /*double result = 0;
             for (int i = 1; i < arr.Length; i++)
             {
                 result += arr[i];
             }
-            return result;
+            return result;*/
 
         }
         // Multiplication  method takes the double property and calculate and return the result 
@@ -54,10 +68,16 @@ namespace ConsoleCalculatorApp2
         public static double Division(double inputNumberOne, double inputNumberTwo)
         {
             double result = 0;
+
             if (inputNumberTwo == 0)
+            {
                 throw new DivideByZeroException("Divisor cannot be 0!");
-            else
-            { result = inputNumberOne / inputNumberTwo; }
+            }
+
+            if (inputNumberTwo != 0)
+            {
+                result = inputNumberOne / inputNumberTwo;
+            }
 
             return result;
 
