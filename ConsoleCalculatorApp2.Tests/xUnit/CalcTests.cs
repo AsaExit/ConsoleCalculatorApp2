@@ -35,19 +35,7 @@ namespace ConsoleCalculatorApp2.Tests
             Assert.Equal(4.7, result);
         }
 
-        [Fact]
-        public void AdditionTesBeginDecimal()
-        {
-            //ARRANGE
-            double inputNumberOne = -1.3;
-            double inputNumberTwo = 3.4;
 
-            //ACT
-            double result = Calc.Addition(inputNumberOne, inputNumberTwo);
-
-            //ASSERT
-            Assert.Equal(2.1, result, 2);
-        }
         [Fact]
         public void AdditionTestGoodNegativNumbers()
         {
